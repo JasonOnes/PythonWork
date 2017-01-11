@@ -29,9 +29,10 @@
 PEOPLE = [('Kieran', 'Prasch', 'Instructor'), ('Alfonzo', 'Ward', 'Student'), ('Fin', 'Balnik', 'Student')]
 NAMES = ['Kieran', 'Suki', 'Alex', 'Serada', 'Jeff', 'Fin', 'Alfonzo']
 
-squares = [(i**2) for i in range(10)]
+squares = [(i**2) for i in range(1, 11)]
 #here's the troubles
-square_halves = [int(i/2) for i in squares if i % 2 == 0]
+square_halves = [int(i / 2) for i in squares if i % 2 == 0]
+
 
 
 def long_names(n):

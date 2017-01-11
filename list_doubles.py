@@ -16,5 +16,5 @@ def apply_to_all(list_name, n):
     for i in list_name:
         m += i * n
     return m"""
-    m = [(i * 2) for i in list_name if i > 0]
+    m = [(i * n) for i in list_name if i > 0]
     return m
