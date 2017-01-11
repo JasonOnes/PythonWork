@@ -29,8 +29,8 @@ Invalid!
 
 """
 
-def validate(account_number):
-   """Write your code here"""
+"""def validate(account_number):
+
 
 
    check_digit = account_number.pop()
@@ -40,7 +40,8 @@ def validate(account_number):
    for i in range(0, len(account_number)):
       even_acct_num = account_number[i % 2 == 0]
       odd_acct_num = account_number[i % 2 != 0]
-      new_acct_num = even_acct_num + odd_acct_num
+      new_acct_num = list()
+      new_acct_num = zip(even_acct_num, odd_acct_num)
       #if account_number[i % 2] == 0:
          # account_number[i] *= 2
 #account_number[i] is giving the value at that index
@@ -48,6 +49,7 @@ def validate(account_number):
          return even_acct_num * 2
       if odd_acct_num:
          return odd_acct_num
+      #account_number.zip(even_acct_num, odd_acct_num)
       if account_number[i] > 9:
          account_number[i] -= 9
 
@@ -58,6 +60,27 @@ def validate(account_number):
       print("Valid!")
    else:
       print("Invalid!")
+"""
+
+def validate(account_number):
+   check_digit = account_number.pop()
+   account_number.reverse()
+
+   for digit, number in enumerate(account_number):
+      if digit % 2 == 0:
+         account_number[digit] *= 2
+
+      if account_number[digit] > 9:
+         account_number[digit] -= 9
+
+   fresh_number = sum(account_number)
+   digits = str(fresh_number)
+
+   if int(digits[1]) == check_digit:
+      print("Valid!")
+   else:
+      print("Invalid!")
+
 
    return None
 
