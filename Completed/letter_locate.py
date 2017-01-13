@@ -14,11 +14,14 @@ indicating the index of each letter occourance in a given test string.
 
 
 def locate(letter, word):
-    indices_list = list()
-    for l in word:
-        if l == word[range(0,-1,1)]:
-            indices_list + word[n]
+    m = list()
+    n = 0
+    d = len(word)
+    while n < d:
+        if letter == word[n]:
+            m.append(n)
+        n += 1
+    print(m)
 
-        print(indices_list)
-        return indices_list
+locate('b', 'alibaba')
 
