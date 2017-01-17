@@ -14,3 +14,9 @@ Returns the indicies of 'vallies'. A peak has a higher number on either side of 
 >>> chop([1, 2, 3, 4, 5, 6, 7, 6, 5, 4, 5, 6, 7, 8, 9, 8, 7, 6, 7, 8, 9], [6, 9, 14, 19])
 [[1, 2, 3, 4, 5, 6, 7], [6, 5, 4], [5, 6, 7, 8, 9], [8, 7, 6], [7, 8, 9]]
 """
+
+def peak(x):
+    m = list()
+    n = 1
+    for x[n] in x:
+        if x[n] > x[n -1] and

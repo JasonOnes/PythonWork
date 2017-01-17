@@ -61,6 +61,6 @@ def all_upper(x):
 def lower_last_longwords(x):
     y = x.lower().split()
     new_list = [i for i in y if len(i) >3]
-    m = sorted(new_list, key = lambda word: word[-1])
+    m = sorted(new_list, key=lambda word: word[-1])
     return m
 
