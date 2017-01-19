@@ -1,23 +1,28 @@
-def oregon_income_tax():
-    x = int(input("Your income here:  "))
-    total = list()
 
-    if x > 116000:
-        y = (x - 116000) * 0.099
+def taxes():
+    x = int(input("How much did you make last year? "))
+    total = list()
+    if x >= 3350:
+        total.append(3350 * 0.05)
+        x -= 3350
+    else:
+        total.append(x * 0.05)
+        x = 0
+    if x >= 5050:
+        y = 5050 * 0.07
         total.append(y)
-        if x < 116000 and x > 8400:
-            #y = 3350 * 0.05
-            total.append((x - 8400) * 0.09)
-            print(total)
-            if x < 8400 and x > 3350:
-                total.append((x-3350) * 0.07)
-                print(total)
-                if x <= 3350:
-                    total.append(x * 0.05)
-                    print(total)
-                #if x > 124400:
-        #total.apppen((x-124400) * 0.099)
-        #print(total)"""
+        x -= 5050
+    else:
+        total.append(x * 0.07)
+        x = 0
+    if x >= 116000:
+        total.append(116000 * 0.09)
+        x -= 116000
+        total.append(x * 0.099)
+    else:
+        total.append(x * 0.09)
+        x = 0
+
     print(sum(total))
 
-oregon_income_tax()
+taxes()
