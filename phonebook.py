@@ -1,3 +1,10 @@
+"""
+Work on creating functions for each choice
+"""
+
+
+
+
 def phonebook(p_book=None):
     if p_book is None:
         p_book = dict()
@@ -21,15 +28,22 @@ def phonebook(p_book=None):
         print(y)
         #phonebook(p_book=p_book)
     elif x == "3":
-        y = input("What contact do you want to change?")
+        y = input("What contact do you want to change? ")
+        """if y in p_book:
+            pass
+        elif y not in p_book:
+            print("I don't recognize that handle!\n Try again.")
+        """
         z = input("What do you want to change?\n1.{}'s real name?\n2.{}'s age?\n3.{}'s number?".format(y))
         if z == "1":
             new_name = input("What do you want to change name to? ")
             p_book[y] = new_name
-            #change name
+            #change name, del old and replace with new?
         elif z == "2":
+            new_age = input("How old is {} really? ".format(handle))
             #change age
         elif z == "3":
+            new_number = input("What's their actual number? ")
             #change number
         else:
             print("Nice try!")
