@@ -66,8 +66,6 @@ def mr_clean(x):
     y = list(x)
     #z = str(y)
     new_string = " ".join(y)
-    new_string[0] = " "
-    new_string[-1] = " "
 
     return new_string
 #mr_clean('Sparse is better thatn dense')
