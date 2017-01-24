@@ -1,12 +1,17 @@
+#look up counter funtionality
+from collections import counter #not right
 
 def candidates(c=None):
     if c == None:
         c = list()
 
+
     x = input("Give me a list of names!: ")
     if x != 'done':
         c.append(x)
         print(c)
+        ctr = Counter(c)
+        print(ctr.most_common())
         candidates(c)
 
     elif x == 'done':
@@ -14,7 +19,7 @@ def candidates(c=None):
 
     return c
 
-#candidates()
+candidates()
 """
 def voting_booth():
     candidates_list = list()
@@ -24,7 +29,7 @@ def voting_booth():
     cand_votes = {}
     cand_votes(enumerate(candidates_list))
     print(cand_votes)"""
-
+"""
 def voting_booth(num_voters):
     cand_list = list()
     print("Welcome, step right up!")
@@ -41,4 +46,10 @@ def election_results("county"):
     tally = dict(enumerate(set(voting_booth("county"))))
     print tally
 
-election    
+election
+""""""
+def vote_tally():
+    cand_list = list()
+
+    counter function with candidates as they are voted on?
+"""

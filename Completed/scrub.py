@@ -43,9 +43,11 @@ def scrub_numbers(x):
     #print(new_list)
     return new_list
 def gentle_clean(x):
-    new_list = re.sub('[_]', " ", x).sub('[-]', "", x)
-    #print(new_list)
-    return new_list
+    #y = list(x)
+    new_list = re.sub('[_\-]', " ", x)
+    # newer_list = re.sub('[-]', " ", new_list)
+    newest_list = re.sub('  ', " ", new_list)
+    return newest_list + '.'
 #gentle_clean("he-odsf_butter what")
 
 def clean_data(x):
@@ -57,18 +59,19 @@ def clean_data(x):
 def some_scrubber(x):
     #new_string = re.sub('\w\s', "", x)
     new_string = x[::2]
-    new_string = re.sub('(?<=\w)\s', '', x)
-    #print(new_string)
+    #new_string = re.sub('(?<=)w+\s', '', x)
+    #newer_string = re.sub('\s{2}',' ', new_string)
+    #new_string.replace("  ", " ")
     return new_string
 #some_scrubber("w h a t   I       d o n t")
 
 def mr_clean(x):
-    y = list(x)
-    #z = str(y)
-    new_string = " ".join(y)
+    new_string = " ".join(x)
+    #for item in range(:len(x):2):
+    #    y.append(" ")
+    y = " " + new_string + " "
+    return y
 
-    return new_string
-#mr_clean('Sparse is better thatn dense')
 
 
 def ms_clean(x):
