@@ -18,7 +18,15 @@ Go through the search list and find all pairs of numbers that would add together
 # Nested list comprehension perhaps?
 
 def find_sum_pairs(num_list, sum_x):
-    m = [(a, b) for a, b in num_list if (a + b) == sum_x]
-    print(m)
-
+    #m = [(a, b) for a, b in num_list if (a + b) == sum_x]
+    pairs_list = list()
+    n = 0
+    y = 1
+    while n <= len(num_list) - 1:
+        for x in num_list:
+            if sum_x - num_list[n] == num_list[y]:
+                pairs_list.extend([num_list[y], num_list[n]])
+                y += 1
+            n += 1
+    print(pairs_list)
 find_sum_pairs([1, 2, 3, 4, 5, 7], 7)
