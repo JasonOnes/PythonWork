@@ -20,13 +20,28 @@ Go through the search list and find all pairs of numbers that would add together
 def find_sum_pairs(num_list, sum_x):
     #m = [(a, b) for a, b in num_list if (a + b) == sum_x]
     pairs_list = list()
-    n = 0
-    y = 1
-    while n <= len(num_list) - 1:
-        for x in num_list:
-            if sum_x - num_list[n] == num_list[y]:
-                pairs_list.extend([num_list[y], num_list[n]])
-                y += 1
-            n += 1
+    first_index = 0
+    second_index = 1
+    while first_index <= len(num_list) - 1:
+        for taco in num_list:
+            #while second_index < len(num_list):
+            if sum_x - num_list[first_index] == num_list[second_index]:
+                pairs_list.extend([num_list[first_index], num_list[second_index]])
+                second_index += 1
+            #elif sum_x - num_list[first_index] != num_list[second_index]:
+                #second_index += 1
+            first_index += 1
     print(pairs_list)
+
 find_sum_pairs([1, 2, 3, 4, 5, 7], 7)
+"""
+def find_sum_pairs(num_list, sum_x):
+    pairs_list = list()
+    for number in num_list:
+        if number + num_list[-1] == sum_x:
+            pairs_list.append([number, num_list[-1]])
+        num_list[-1] -= num_list[1
+    print(pairs_list)
+
+find_sum_pairs([1, 2, 3, 4, 5, 7], 7)
+"""

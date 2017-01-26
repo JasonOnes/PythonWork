@@ -1,10 +1,10 @@
 #look up counter funtionality
-from collections import counter #not right
+from collections import Counter #not right
 
 def candidates(c=None):
     if c == None:
         c = list()
-
+        ctr = Counter(c)
 
     x = input("Give me a list of names!: ")
     if x != 'done':
@@ -15,11 +15,22 @@ def candidates(c=None):
         candidates(c)
 
     elif x == 'done':
+        #print(ctr.most_common())
         print(c)
 
     return c
 
 candidates()
+
+def voting(num_voters):
+    big_list = list()
+    for voter in range(num_voters):
+        tally = candidates()
+        big_list.extend(tally)
+        #figure out counter how to tally all the votes in the seperate lists
+    print(big_list)
+
+
 """
 def voting_booth():
     candidates_list = list()
