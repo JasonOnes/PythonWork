@@ -25,6 +25,7 @@ def distcon():
         return amount == amount * meter_km
     elif input_from == "ft":
         return amount == amount * meter_ft
+    # TODO give up all hope
 
     if input_to == "mi":
         return output == meter_mi / amount

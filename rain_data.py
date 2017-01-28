@@ -1,4 +1,4 @@
-import datetime from datetime
+from datetime import datetime
 
 
 with open('/home/jasonones/Git/PythonFullStack/1_Python/labs/projects/rain_data/sample.rain', 'r') as taco:
@@ -29,33 +29,43 @@ max_rain_day = sorta_rainy[0]
 #combine all day totals for each years
 #import datetime
 #reformat dates
-""" years = {2002:[],
-            2003:[],
-            2004:[],
-            2005:[],
-            2006:[],
-            2007:[],
-            2008:[],
-            2009:[],
-            2010:[],
-            2011:[],
-            2012:[],
-            2013:[],
-            2014:[],
-            2015:[],
-            2016:[]}
 
-    years = {}
-    for date, rain in sorta_rainy:
-        year = date.split('-')[-1]
+#def rainiest_year():
 
-        if year in years:
-            years[year].append(rain[0])
-        else:
-            years[year] = list([rain[0]])
-    print(years)
+years = {}
+for date, rain in sorta_rainy:
+    year = date.split('-')[-1]
 
-    rain_totes = {date:sum(rain) for date, rain in years.items()}
-    print(rain_totes)
+    if year in years:
+        years[year].append(rain[0])
+    else:
+        years[year] = list([rain[0]])
+#print(years)
 
-    lotta_rain = sorted(rain_totes.items(), key=lambda year:year[1], reverse=True)
+rain_totes = {date:sum(rain) for date, rain in years.items()}
+#print(rain_totes)
+
+lotta_rain = sorted(rain_totes.items(), key=lambda year:year[1], reverse=True)
+print(lotta_rain)
+
+#find rainiest day of the year on average
+#def rainiest_day_avg():
+days = {}
+
+for date, rain in sorta_rainy:
+    day = date.split('-')[:2]
+    cleaned_day = "".join(day)
+    if cleaned_day in days:
+        days[cleaned_day].append(rain[0])
+    else:
+        days[cleaned_day] = list([rain[0]])
+print(days)
+
+tots = {k: sum(v) for k, v in days.items()}
+import pdb; pdb.set_trace()
+#day_avgs = {date:((sum(rain))/365) for date, rain in days.items()}
+#print(day_avgs)
+
+#rainiest_day = sorted(day_avgs.items(), key=lambda day:day[1], reverse=True)
+
+#print(rainiest_day)

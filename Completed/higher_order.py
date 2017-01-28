@@ -26,14 +26,6 @@
 Filter words longer than 3, make all words lowercase words, and sort by last letter.
 >>> lower_last_longwords(quote)
 ['(european)', 'end,', 'but,', 'second.', 'all.', 'concluded', 'airspeed', 'real', 'unladen', 'question', 'hour', "it's", 'miles', 'meters', 'swallows', 'that', 'about', 'about', 'swallow', 'velocity']
-
-"""
-
-def sorted_absolute(x):
-    new_list = sorted(x, key=abs)
-    return(new_list)
-
-def double(x):
     m = [(i * 2) for i in x]
     return m
 
@@ -60,7 +52,3 @@ def all_upper(x):
 
 def lower_last_longwords(x):
     y = x.lower().split()
-    new_list = [i for i in y if len(i) >3]
-    m = sorted(new_list, key=lambda word: word[-1])
-    return m
-
