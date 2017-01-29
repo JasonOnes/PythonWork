@@ -51,14 +51,14 @@ def find_sum_pairs(num_list, sum_x):
     pairs_list = list()
     first_index = 0
     second_index = -1
-    
+    sorta_listing = sorted(num_list)
     for num in num_list:
-        if num_list[first_index] + num_list[second_index] > sum_x:
+        if sorta_listing[first_index] + sorta_listing[second_index] > sum_x:
             second_index -= 1
-        elif num_list[first_index] + num_list[second_index] < sum_x:
+        elif sorta_listing[first_index] + sorta_listing[second_index] < sum_x:
             first_index += 1
-        elif num_list[first_index] + num_list[second_index] == sum_x:
-            pairs_list.extend([num_list[first_index], num_list[second_index]])
+        elif sorta_listing[first_index] + sorta_listing[second_index] == sum_x:
+            pairs_list.extend([sorta_listing[first_index], sorta_listing[second_index]])
             first_index += 1
     print(pairs_list)
 
