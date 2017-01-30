@@ -35,26 +35,36 @@ Write a Generator function named 'fib_infinite()' to calculate fibbonacci number
 
 
 def fibo(x):
-    f = list()
+    f = list([0])
     num = 0
     num_b = 1
     # f = [(num[n] + num[n+1]) for num in m ]
     while num < x:
         num, num_b = num_b, num + num_b
         #num_b = num + num_b
+        print(num)
         f.append(num)
 
     print(f)
+    #print(f[-1])
 
+#fibo(7)
 
-fibo(7)
+def largest_fibo(x):
+    #fibo(x)
+    print(fibo[x][-1])
 
+largest_fibo(7)
 """
 # sum of two preceding index numbers
 def fibo_iterator(x):
+    f[-1]
     m = range(x)
     fibo[n] == fibo[n - 1] + fibo[n - 2]
+
+def next():
+    print(fibo_iterator())
+
+
+#def fib_infinite():
 """
-
-
-def fib_infinite():

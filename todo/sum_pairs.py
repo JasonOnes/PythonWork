@@ -47,11 +47,13 @@ find_sum_pairs([1, 2, 3, 4, 5, 7], 7)
 """
 
 # Still doesn't pass all the doctests but O(1), I think
+
 def find_sum_pairs(num_list, sum_x):
     pairs_list = list()
     first_index = 0
     second_index = -1
     sorta_listing = sorted(num_list)
+    #while first_index < second_index:
     for num in num_list:
         if sorta_listing[first_index] + sorta_listing[second_index] > sum_x:
             second_index -= 1
