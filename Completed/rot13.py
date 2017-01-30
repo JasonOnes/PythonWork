@@ -8,20 +8,18 @@ message = "Ohg, bssvpre, V qvqa'g pngpu gurfr -- gurl ner zl crg svfu naq V whfg
 # Write your code here
 def decode(x):
     lower_m = x.lower()
-    char = list('abcdefghijklmnopqrstuvwxyz' * 2)
-    #char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-    #        'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    #master = char * 2
+    char = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    master = char * 2
     decoded_x = list()
     for letter in lower_m:
         if letter in char:
             n = char.index(letter)
-            decoded_x.extend(char[n+13])
+            decoded_x.extend(master[n+13])
 
         elif letter not in char:
             decoded_x.extend(letter)
-        y = ''.join(decoded_x)
-    print(y)
+    print(str(decoded_x))
 
 message = "Ohg, bssvpre, V qvqa'g pngpu gurfr -- gurl ner zl crg svfu naq V whfg\
  oevat gurz urer gb fjvz. Jura gurl'er qbar gurl whzc onpx vagb gur ohpxrg."

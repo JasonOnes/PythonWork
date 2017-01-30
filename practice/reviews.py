@@ -30,6 +30,8 @@ def load_review_data():
         print(businesses)
         return businesses
 
+    with open()
+
         # business_data = json.loads(business_data)
         # print(business_data)
 
