@@ -13,6 +13,8 @@ def phonebook(p_book=None):
               "2. Retrieve and existing contact\n"
               "3. Update a contact\n"
               "4. Delete a contact\nor \'quit\'\n")
+
+
     if x == "1":
         contact = input("What's your handle partner? ")
         real_name = input("And your real name? ")
@@ -22,6 +24,7 @@ def phonebook(p_book=None):
 
         print(p_book)
         #phonebook(p_book=p_book)
+
     elif x == "2":
         handle = input("Who are you trying to find? ")
         if handle in p_book:
@@ -30,6 +33,7 @@ def phonebook(p_book=None):
             print("Sorry, no such contact.")
         #print(y)
         #phonebook(p_book=p_book)
+
     elif x == "3":
         contact = input("What contact do you want to change? ")
         if contact in p_book:
@@ -38,6 +42,9 @@ def phonebook(p_book=None):
         #    print("I don't recognize that handle!\n Try again.")
 
             change = input("What do you want to change?\n1.{0}'s real name?\n2.{0}'s age?\n3.{0}'s number?".format(contact))
+
+            # Lookup existing person and find thier real name.
+
             if change == "1":
                 new_name = input("What do you want to change name to? ")
                 p_book[contact][real_name] = new_name
