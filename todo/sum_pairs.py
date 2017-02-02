@@ -60,8 +60,10 @@ def find_sum_pairs(num_list, sum_x):
         elif sorta_listing[first_index] + sorta_listing[second_index] < sum_x:
             first_index += 1
         elif sorta_listing[first_index] + sorta_listing[second_index] == sum_x:
-            pairs_list.extend([sorta_listing[first_index], sorta_listing[second_index]])
+            pairs_list.append(([sorta_listing[first_index], sorta_listing[second_index]]))
             first_index += 1
     print(pairs_list)
+
+    return pairs_list
 
 find_sum_pairs([1, 2, 3, 4, 5, 7], 7)

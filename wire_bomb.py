@@ -16,19 +16,19 @@ def dead():
     return None
 
 
-def next(next_wire):
+def next_wire(next_wire):
     wire_to_cut = int(input("How many wires are left? "))
     #wire_to_cut -= 1
     while wire_to_cut > 0:
         next_wire = input("Alright man, now which? ")
         wire_to_cut -= 1
-        next(next_wire)
+        next_wire(next_wire)
     if wire_to_cut == 0:
         win()
 
 
 def white(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "White":
         dead()
     elif next_wire == "Black":
@@ -46,7 +46,7 @@ def white(next_wire):
 
 
 def black(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "White":
         white(next_wire)
     elif next_wire == "Black":
@@ -64,7 +64,7 @@ def black(next_wire):
 
 
 def red(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "Green":
         green(next_wire)
     elif next_wire == "Red":
@@ -74,7 +74,7 @@ def red(next_wire):
 
 
 def green(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "White":
         white(next_wire)
     elif next_wire == "Orange":
@@ -86,7 +86,7 @@ def green(next_wire):
 
 
 def purple(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "Red":
         red(next_wire)
     elif next_wire == "White":
@@ -96,7 +96,7 @@ def purple(next_wire):
 
 
 def orange(next_wire):
-    next(next_wire)
+    next_wire(next_wire)
     if next_wire == "Red":
         red(next_wire)
     elif next_wire == "Black":
