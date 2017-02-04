@@ -1,5 +1,5 @@
 import unittest
-from valet import Vehicle, ParkingLot
+from park_lot_two import Vehicle, ParkingLot
 
 
 class TestValet(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestValet(unittest.TestCase):
         """
         Create a few instances before we start testing.
         """
-        self.mikes_lot = ParkingLot(capacity=3, rate=20.0)
+        self.mikes_lot = ParkingLot(capacity=3, hourly_rate=20.0)
         self.mustang = Vehicle(color='red', plate='PDXFTW')
         self.honda = Vehicle(color='cyan', plate='EWR456')
         self.lemon = Vehicle(color='black', plate='HGH72L')
@@ -54,3 +54,5 @@ class TestValet(unittest.TestCase):
     def test_vehicle_pickup(self):
         """Go get the car"""
         pass
+
+#TestValet(unittest, park_lot)
