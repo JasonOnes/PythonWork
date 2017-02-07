@@ -54,4 +54,4 @@ class ParkingLot:
         return self
 
 
-JacksSpaces = ParkingLot(capacity=17, hourly_rate=18)
+#JacksSpaces = ParkingLot(capacity=17, hourly_rate=18)
