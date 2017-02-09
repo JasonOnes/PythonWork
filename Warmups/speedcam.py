@@ -24,16 +24,13 @@ def speedy():
     data = data.replace('.', '')
     scrub_file = data.split("\n")
     print(scrub_file)
-    speed_limit = scrub_file[0][-2]
+    speed_limit = scrub_file[0][15:20]
     distance_one = int(scrub_file[2][25:28])
     miles_one = distance_one * 0.000621371
     distance_two = int(scrub_file[3][25:28])
     miles_two = distance_two * 0.000621371
     distance_three = int(scrub_file[4][25:29])
     miles_three = distance_three * 0.000621371
-    #print(distance_one)
-    #print(distance_two)
-    #print(distance_three)
 
     better_data = [line.split() for line in scrub_file[5::] if 'Start' not in line and line != '']
 
@@ -53,10 +50,6 @@ def speedy():
 
     #print(cam_log)
 
-#def speeding():
-#    print("Vehicle {} broke the speed limit by {}.".format(plate, car_speed -
-#            speed_limit))
-
     for plate, vdata in cam_log.items():
         #vdata[n][1] = int
         for place, timestr in vdata:
@@ -64,6 +57,7 @@ def speedy():
             dt = timestr
             x = vdata[1][1] - vdata[0][1]
             print(x)
+            print(speed_limit)
             #print(plate, place, dt)
 """            if distance_one / (vdata[1][1] - vdata[0][1]) > speed_limit:
                 car_speed = distance_one / (int(vdata[1][1]) - int(vdata[0][1]))
@@ -81,7 +75,3 @@ def speedy():
 speedy()
     #
     #
-    #
-    # if Vehicle in camera[n] and camera[n+1]:
-    #     #***find speed
-    #     camera[n][time]
