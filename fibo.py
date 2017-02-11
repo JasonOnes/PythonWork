@@ -55,16 +55,15 @@ def largest_fibo(x):
     print(fibo[x][-1])
 
 largest_fibo(7)
-"""
-# sum of two preceding index numbers
-def fibo_iterator(x):
-    f[-1]
-    m = range(x)
-    fibo[n] == fibo[n - 1] + fibo[n - 2]
-
-def next():
-    print(fibo_iterator())
 
 
-#def fib_infinite():
-"""
+class Fibo(object):
+    def __init__(self):
+        self = self
+        #self.num = self + num
+
+    def next(self):
+        new_self = fibo(self)
+        print(new_self)
+
+    
