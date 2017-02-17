@@ -16,7 +16,7 @@ p {
   display: inline;
 }
 
-#hamburger {
+#hamburger.container {
   float: right;
   position: relative;
 }

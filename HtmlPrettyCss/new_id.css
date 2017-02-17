@@ -1,0 +1,18 @@
+
+
+h1 {
+  color:
+}
+body{
+  background-color: red;
+  bordered:solid black 2px;
+  background-size: contain;
+  background-position: center;
+}
+
+#hamburger{
+  float:right;
+  width:100px;
+  height:200px;
+
+}
