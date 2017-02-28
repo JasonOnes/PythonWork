@@ -1,0 +1,7 @@
+README.txt
+searchy_wordy.py
+setup.py
+searchy_wordy.egg-info/PKG-INFO
+searchy_wordy.egg-info/SOURCES.txt
+searchy_wordy.egg-info/dependency_links.txt
+searchy_wordy.egg-info/top_level.txt
