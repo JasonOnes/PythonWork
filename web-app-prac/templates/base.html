@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+      <title>{{ the_title }}</title>
+      <!-- Jinja2 directive, value will be provided --> 
+      <!-- kind of like an argument for the template -->
+      <link rel="stylesheet" href="static/hf.css" />
+<!-- this will define the look of the page using css from the above path -->
+    </head>
+
+    <body>
+
+      {% block body %}
+        <!-- these Jinja2 directives indicate a block of HTML will be inserted here -->
+      {% endblock %}
+
+    </body>
+
+</html>

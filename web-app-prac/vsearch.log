@@ -1,0 +1,3 @@
+ImmutableMultiDict([('phrase', 'woiefllsadc'), ('letters', 'alweifoiawcd')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36|{'d', 'c', 'e', 'o', 'l', 'f', 'a', 'i', 'w'}
+ImmutableMultiDict([('phrase', 'stupid monkey'), ('letters', 'alweifoiawcduu')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36|{'e', 'u', 'd', 'i', 'o'}
+ImmutableMultiDict([('phrase', 'clear'), ('letters', 'alweifoiawcduu')])|127.0.0.1|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36|{'e', 'a', 'c', 'l'}
