@@ -1,7 +1,9 @@
 
 from flask import Flask, render_template, request, escape
 from vsearch import search_word
+
 from DBcm import UseDatabase#imprts mysyql connector already
+from checker import check_logged_in
 
 app = Flask(__name__)
 """ data base connection characteristics """
@@ -61,6 +63,7 @@ def entry_page():
 #         return contents
 
 @app.route('/viewlog')
+@check_logged_in
 def view_the_log():
     """ display the contents of the log file as a HTML table."""
     with UseDatabase(app.config['dbconfig']) as cursor:
