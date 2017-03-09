@@ -2,10 +2,16 @@
 
 
 from flask import Flask, render_template, request, escape, session
+from flask import copy_current_request_context
+
 from vsearch import search_word
+from threading import Thread
+
 
 from freshDBcm import UseDatabase, ConnectionError, CredentialsError#imprts mysyql connector already
 from checker import check_logged_in
+
+from time import sleep
 
 app = Flask(__name__)
 """ data base connection characteristics """
@@ -44,16 +50,37 @@ def do_logout():
     session.pop('logged_in')
     return "You are now logged out!"
 
-
-
 @app.route('/search4', methods=['POST'])#URL
 def do_the_search():
+    @copy_current_request_context#Flask decorator only works with nested functs
+    #this is why log_request is put within do_the_search 
+    def log_request(req: 'flask_request', res: str):
+        sleep(15) #this makes the log request slow
+        """ This should log the details of the web request and results into our dB"""
+        # conn = mysql.connector.connect(**dbconfig)
+        # cursor = conn.cursor() contained within UseDatabase method
+
+        """ The UseDatabase context manager expects a dictionary fo db connection characteristics"""
+        with UseDatabase(app.config['dbconfig']) as cursor:#the context manager returns "cursor"
+            _SQL = """ insert into log
+                       (phrase, letters, ip, browser_string, results)
+                       values
+                       (%s, %s, %s, %s, %s)"""
+
+            cursor.execute(_SQL, (req.form['phrase'],
+                                  req.form['letters'],
+                                  req.remote_addr,
+                                  req.user_agent.browser,
+                                  res, ))
+
     phrase = request.form['phrase']
     letters = request.form['letters']
     title = 'Here\'s your results buddy!'
     results = str(search_word(phrase, letters))
     try:
-        log_request(request, results)
+        # log_request(request, results)
+        t = Thread(target=log_request, args=(request, results))
+        t.start()
     except Exception as err:
         print('***** Logging failied with this error:',str(err))
     return render_template('results.html',
