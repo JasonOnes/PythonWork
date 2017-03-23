@@ -1,7 +1,8 @@
 """ getting the classy juices flowing"""
+from classtoolin import AttrDisplay #testing classes and display
 
-
-class Person:
+class Person(AttrDisplay):
+    """Create and process records of persons"""
     def __init__(self, name, job=None, pay=0):
         self.name = name
         self.job = job
@@ -11,8 +12,8 @@ class Person:
         return self.name.split()[-1]
     def giveRaiseto(self, percent):
         self.pay = int(self.pay * (1 + percent))
-    def __repr__(self):
-        return '[Person: {}, {}]'.format(self.name, self.pay)
+    # def __repr__(self):
+    #     return '[Person: {}, {}, {}]'.format(self.name, self.job, self.pay)
 
 class Manager(Person):
     def __init__(self, name, pay):
@@ -22,17 +23,6 @@ class Manager(Person):
         """bad way self.pay = int(self.pay * (1+ percent + bonus))"""
         Person.giveRaiseto(self, percent + bonus) #augment = good
 
-class Department:
-    def __init__(self, *args):
-        self.members = list(args)
-    def addMember(self, person):
-        self.members.append(person)
-    def giveRaiseto(self, percent):
-        for person in self.members:
-            person.giveRaiseto(person)
-    def showAll(self):
-        for person in self.members:
-            print(person)
 
 if __name__ == '__main__':
     bob = Person('Bob Smith')
@@ -41,8 +31,8 @@ if __name__ == '__main__':
     # print(sue.name, sue.job)
     # sue.pay *= 1.10
     # print('%.2f'% sue.pay)
-    # sue.giveRaiseto(0.05)
-    # print(sue.pay)
+    sue.giveRaiseto(0.05)
+    print(sue.pay)
     # print(bob.lastName())
     # print(bob)
     # print(sue)
@@ -51,8 +41,4 @@ if __name__ == '__main__':
     # tom.giveRaiseto(0.10)
     # print(tom.pay)
     # print(tom.lastName())
-    # print(tom)
-    development = Department(bob, sue)
-    development.addMember(tom)
-    #development.giveRaiseto(0.10)
-    development.showAll
+    print(tom)
